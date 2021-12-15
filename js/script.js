@@ -5,7 +5,7 @@ const cities = []; //empty array we can put the fetched cities into
 
 fetch(endpoint) //fetches the information from endpoint
     .then(blob => blob.json()) //it can only fetch raw data but doesn't know what kind of data so we have to use a json method to tell the browser that it's fetching a json file
-    .then(data => cities.push(...data)); //once browser knows it looks at a json file we can add the date into the aray by using push and spread (...)
+    .then(data => cities.push(...data)); //once browser knows it looks at a json file we can add the data into the aray by using push and spread (...)
 
 //function that creates a smaller array that contains only cities/states that match the searched word(s)
 function findMatches(wordToMatch, cities) {
@@ -34,7 +34,7 @@ function displayMatches() {
         <li> 
         <span class="name">${cityName}, ${stateName}</span>
         <span class="population">${numberWithCommas(place.population)}</span>
-        `;//this is the html (and css) we want to add when it finds a match
+        `;//this is the html (and css) we want to add when it finds a match so that the names, states and population figures of matching cities appear in the ul
     }).join("");
     suggestions.innerHTML = html; //adds the HTML to the unordered list to display the search results
 }
@@ -43,5 +43,5 @@ const searchInput = document.querySelector(".search"); //input field
 const suggestions = document.querySelector(".suggestions"); //unordered list
 
 //listen for changes in the input field
-searchInput.addEventListener("change", displayMatches); //displays function when you put something into the field and click outside of it
-searchInput.addEventListener("keyup", displayMatches); //displays function as soon as you type in another key
+searchInput.addEventListener("change", displayMatches); //runs display function when you put something into the field and click outside of it
+searchInput.addEventListener("keyup", displayMatches); //runs display function as soon as you type in another key

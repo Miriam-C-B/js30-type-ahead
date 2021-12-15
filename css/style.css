@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  background: #ffc600;
+  background: rgb(189, 103, 189);
   font-family: 'helvetica neue';
   font-size: 20px;
   font-weight: 200;
@@ -42,6 +42,7 @@ input.search {
   /*perspective: 20px;*/
 }
 
+/* list of search results */
 .suggestions li {
   background: white;
   list-style: none;
@@ -55,6 +56,7 @@ input.search {
   text-transform: capitalize;
 }
 
+/* style for the list of search results when they appear; gives them the zigzag look */
 .suggestions li:nth-child(even) {
   transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
   background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
@@ -70,5 +72,5 @@ span.population {
 }
 
 .hl {
-  background: #ffc600;
+  background: rgb(189, 103, 189);
 }
